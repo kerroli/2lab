@@ -14,7 +14,6 @@ int main() {
     return 0;
 }
 
-
 int task1(){
     std::cout << "First task:" << std::endl;
     int x=0;
@@ -24,7 +23,7 @@ int task1(){
         if (x == 30) {
             std::cout << "\n";
             x=0;
-         }
+        }
     }
     std::cout << std::endl;
     return 0;
@@ -38,14 +37,14 @@ int task2() {
     static_cast<int>(x);
     if (48 <= x && x <= 57){
         std::cout << "Entered symbol is a digit" << std::endl;
-    return 0;
-}
+        return 0;
+    }
     if ((65 <= x && x <= 90) || (97 <= x && x <= 122)){
         std::cout << "Entered symbol is a letter" << std::endl;
-    return 0;
-}
-        else
-            std::cout <<"Entered symbol is unknown" << std::endl;
+        return 0;
+    }
+    else
+        std::cout <<"Entered symbol is unknown" << std::endl;
     return 0;
 }
 
@@ -67,6 +66,7 @@ int task3(){
             std::cout << 3*x << std::endl;
             break;
     }
+    return 0;
 }
 
 int task4(){
@@ -80,7 +80,7 @@ int task4(){
         float answ = x;
         while ((static_cast<int>(answ*acc)) != (static_cast<int>(y*acc))){
             answ += (((n-1)*n)/2)*pow(x,(n-2));
-            //std::cout << answ << std::endl;
+            std::cout << answ << std::endl;
             n++;
         }
         std::cout << answ << " correctness 10^" << power << " iterations " << n << std::endl;
