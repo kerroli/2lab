@@ -70,17 +70,17 @@ int task3(){
 }
 
 int task4(){
-    std::cout << "Fourth task:" << std::endl;
     float x;
-    std::cin >> x;
     int power = -2;
+    std::cout << "Fourth task:" << std::endl;
+    std::cin >> x;
     for ( unsigned int acc = 100; acc<=1000000; acc*=10) {
         int n = 1;
         float y = 1 / pow((1 - x), 3);
         float answ = x;
         while ((static_cast<int>(answ*acc)) != (static_cast<int>(y*acc))){
             answ += (((n-1)*n)/2)*pow(x,(n-2));
-            std::cout << answ << std::endl;
+            //std::cout << answ << std::endl;
             n++;
         }
         std::cout << answ << " correctness 10^" << power << " iterations " << n << std::endl;
