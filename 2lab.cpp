@@ -16,16 +16,8 @@ int main() {
 
 int task1(){
     std::cout << "First task:" << std::endl;
-    int x=0;
-    for(int y = 0 ; y <= 255 ; y++) {
-        std::cout << static_cast<char>(y) << ' ';
-        x++;
-        if (x == 30) {
-            std::cout << "\n";
-            x=0;
-        }
-    }
-    std::cout << std::endl;
+    for(int y = 0 ; y <= 255 ; y++)
+        std::cout << y << ": " << static_cast<char>(y) << std::endl;
     return 0;
 }
 
@@ -34,7 +26,6 @@ int task2() {
     char x;
     std::cout << "Enter your symbol:" << std::endl;
     std::cin >> x;
-    static_cast<int>(x);
     if (48 <= x && x <= 57){
         std::cout << "Entered symbol is a digit" << std::endl;
         return 0;
@@ -80,7 +71,6 @@ int task4(){
         float answ = x;
         while ((static_cast<int>(answ*acc)) != (static_cast<int>(y*acc))){
             answ += (((n-1)*n)/2)*pow(x,(n-2));
-            //std::cout << answ << std::endl;
             n++;
         }
         std::cout << answ << " correctness 10^" << power << " iterations " << n << std::endl;
