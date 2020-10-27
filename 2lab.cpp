@@ -60,21 +60,23 @@ int task3(){
     return 0;
 }
 
-int task4(){
-    float x;
+int task4() {
+    float x, epsilon, answ = 0;
     int power = -2;
     std::cout << "Fourth task:" << std::endl;
     std::cin >> x;
-    for ( unsigned int acc = 100; acc<=1000000; acc*=10) {
-        int n = 1;
+    for ( int power = -2; power >= -6; power-- ) {
+        epsilon = pow(10, power);
+        int n = 0;
         float y = 1 / pow((1 - x), 3);
-        float answ = x;
-        while ((static_cast<int>(answ*acc)) != (static_cast<int>(y*acc))){
-            answ += (((n-1)*n)/2)*pow(x,(n-2));
+        float temporary = 1;
+        answ = 0;
+        while (abs(temporary) > epsilon) {
+            temporary = (((n - 1) * n) / 2) * pow(x, (n - 2));
+            answ += temporary;
             n++;
         }
-        std::cout << answ << " correctness 10^" << power << " iterations " << n << std::endl;
-        power--;
+        std::cout << answ << " correctness: 10^" << power << " iterations: " << n << std::endl;
     }
     return 0;
 }
