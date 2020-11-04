@@ -61,17 +61,17 @@ int task3(){
 }
 
 int task4() {
-    float x, epsilon, answ = 0;
-    int power = -2;
+    float x;
     std::cout << "Fourth task:" << std::endl;
     std::cin >> x;
+    float y = 1/pow((1-x),3);
+    if ( abs(x) >= 1)
+        return 0;
     for ( int power = -2; power >= -6; power-- ) {
-        epsilon = pow(10, power);
         int n = 0;
-        float y = 1 / pow((1 - x), 3);
-        float temporary = 1;
-        answ = 0;
-        while (abs(temporary) > epsilon) {
+        float temporary;
+        float answ = 0.;
+        while ( abs(y) != answ ) {
             temporary = (((n - 1) * n) / 2) * pow(x, (n - 2));
             answ += temporary;
             n++;
